@@ -42,15 +42,14 @@ class Solution {
           // Third round: restore the original list, and extract the copy list.
           iter = head;
           Node pseudoHead = new Node(0);
-          Node copy, copyIter = pseudoHead;
+          Node copy = pseudoHead;
 
           while (iter != null) {
             front = iter.next.next;
 
             // extract the copy
-            copy = iter.next;
-            copyIter.next = copy;
-            copyIter = copy;
+            copy.next = iter.next;
+            copy = copy.next;
 
             // restore the original list
             iter.next = front;
