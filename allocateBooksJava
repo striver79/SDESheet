@@ -13,7 +13,7 @@ public class Solution {
                 sumAllocated += A.get(i);
             }
         }
-        if(cnt < students) return true; 
+        if(cnt <= students) return true; 
         return false; 
     }
     public int books(ArrayList<Integer> A, int B) {
@@ -27,7 +27,6 @@ public class Solution {
         int res = -1; 
         while(low <= high) {
             int mid = (low + high) >> 1; 
-            //cout << low << " " << high << " " << mid << endl; 
             if(isPossible(A, mid, B)) {
                 res = mid; 
                 high = mid - 1; 
