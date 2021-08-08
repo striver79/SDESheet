@@ -1,4 +1,4 @@
-bool comp(Item a, Item b) {
+bool static comp(Item a, Item b) {
     double r1 = (double)a.value / (double)a.weight;
     double r2 = (double)b.value / (double)b.weight;
     return r1 > r2; 
