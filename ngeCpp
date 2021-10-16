@@ -14,6 +14,7 @@ public:
             }
             st.push(nums[i%n]);
         }
+        reverse(nge.begin(),nge.end());  // reverse the array
         return nge; 
     }
 };
