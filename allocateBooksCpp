@@ -1,11 +1,12 @@
-int isPossible(vector<int> &A, int pages, int students) {
+bool isPossible(vector<int> &A, int pages, int students) {
     int cnt = 0;
     int sumAllocated = 0; 
     for(int i = 0;i<A.size();i++) {
+        if(A[i]>mid)
+            return false;
         if(sumAllocated + A[i] > pages) {
             cnt++; 
             sumAllocated = A[i];
-            if(sumAllocated > pages) return false; 
         }
         else {
             sumAllocated += A[i];
