@@ -21,9 +21,14 @@ class Solution {
                         
                         lo++; hi--;
                     } 
-                    else if (num[lo] + num[hi] < sum) lo++;
-                    
-                    else hi--;
+                    else if (num[lo] + num[hi] < sum) {
+                        while (lo < hi && num[lo] == num[lo+1]) lo++;
+                        lo++;
+                    }
+                    else {
+                        while (lo < hi && num[hi] == num[hi-1]) hi--;
+                        hi--;
+                    }    
                }
             }
         }
