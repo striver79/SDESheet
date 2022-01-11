@@ -18,7 +18,7 @@ public class Solution {
         ListNode fast  = head;
         ListNode entry = head;
 
-        while (fast.next!=null && fast.next.next!=null) {
+        while (fast!=null && fast.next!=null) {
             slow = slow.next;
             fast = fast.next.next;
             if (slow == fast) {                      // there is a cycle
