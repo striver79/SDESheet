@@ -5,7 +5,7 @@ class Solution {
         while(i >= 0 && A[i] >= A[i + 1]) i--; 
         if(i >= 0) {                           
             int j = A.length - 1;              
-            while(A[j] <= A[i]) j--;      
+            while(j>i && A[j] <= A[i]) j--;      
             swap(A, i, j);                     
         }
         reverse(A, i + 1, A.length - 1);      
