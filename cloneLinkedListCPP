@@ -14,6 +14,51 @@ public:
 };
 */
 
+
+/*
+Approach 01 - Using a Ordered Map (extra space)
+    1 - the map contains <node*,node*> i.e. the next and random pointer
+    2 - it takes 2 passes (list elements copy, then, connections of copies)
+    3 - traverse list and hash the nodes with a fresh node (of Node* type) with value of the copied node
+    4 - traverse list again, do the connections of copy list as per the original list (below)
+    5 - return the head/start of copy list i.e. hashMap[head]
+    
+                                                                    // Approach 1 starts
+
+class Solution {
+public:
+    Node* copyRandomList(Node* head) {
+        if(head==nullptr) return head; //edge case
+        map<Node*,Node*> hashM;
+        Node *temp = head;
+        
+        while(temp){
+            hashM[temp] = new Node(temp->val);
+            temp=temp->next;
+        }
+        
+        Node *curr = head;
+        while(curr){
+            Node *copy = hashM[curr];
+            copy->next = hashM[curr->next];
+            copy->random = hashM[curr->random];
+            curr = curr->next;
+        }
+        return hashM[head];
+    }
+};
+
+                                                                        // Approach 1 ends
+*/
+
+/*
+Approach 02 - Altering the original list and scraping the copied list
+1 - insert new copies next to original nodes
+2 - start again, connect copy.random as per originals
+3 - scrape off the copies from the original list
+*/
+
+
 class Solution {
 public:
     Node* copyRandomList(Node* head) {
