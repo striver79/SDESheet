@@ -22,8 +22,7 @@ public:
         
         // go till that node
         cur->next = head;
-        k = k % len; 
-        k = len - k;
+        k = len - k % len;
         while (k--) cur = cur->next;
         
         // make the node head and break connection 
@@ -34,6 +33,3 @@ public:
         return head; 
     }
 };
-
-
-
