@@ -18,7 +18,7 @@ Node* mergeTwoLists(Node* a, Node* b) {
     
     if(a) temp->bottom = a; 
     else temp->bottom = b; 
-    
+    res->bottom->next =NULL;
     return res -> bottom; 
     
 }
