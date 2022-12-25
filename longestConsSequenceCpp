@@ -21,7 +21,6 @@ public:
                 longestStreak = max(longestStreak, currentStreak);
             }
         }
-
         return longestStreak;
     }
 };
