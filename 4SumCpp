@@ -10,18 +10,18 @@ public:
     
         for (int i = 0; i < n; i++) {
         
-            int target_3 = target - num[i];
+            long long target_3 = target - (long long)num[i];
         
             for (int j = i + 1; j < n; j++) {
             
-                int target_2 = target_3 - num[j];
+                long long target_2 = (long long)target_3 - (long long)num[j];
             
                 int front = j + 1;
                 int back = n - 1;
             
                 while(front < back) {
                 
-                    int two_sum = num[front] + num[back];
+                    long long two_sum = num[front] + num[back];
                 
                     if (two_sum < target_2) front++;
                 
